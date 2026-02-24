@@ -8,62 +8,60 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Listeyi sağa yaslar */
+    align-items: flex-end; 
     background: transparent;
   }
 
   .gift-row {
     position: relative;
-    right: -600px; /* Başlangıçta ekranın tamamen dışında */
+    right: -800px; /* Başlangıçta daha uzakta saklı */
     display: flex;
     align-items: center;
     background: linear-gradient(270deg, #ff0050, #ff0050, #000000ee);
     margin-bottom: 12px;
     padding: 10px 25px;
     border-radius: 40px 0 0 40px;
-    border-right: none;
-    border-left: 4px solid #25F4EE; /* TikTok Mavisi şerit */
+    border-left: 4px solid #25F4EE; 
     width: max-content;
     box-shadow: -5px 5px 15px rgba(0,0,0,0.4);
     
-    /* Toplam 15 saniyelik bir döngü (ayarlanabilir) */
+    /* Toplam süre: 5s giriş öncesi + 1s giriş + 5s bekleme + 1s çıkış = 12 saniye civarı */
     animation: slideInOut 15s infinite ease-in-out;
   }
 
   .icon { width: 40px; height: 40px; margin-right: 15px; }
   .text { color: white; font-size: 20px; font-weight: bold; font-family: 'Segoe UI', sans-serif; }
 
-  /* --- SIRALAMA (DELAY) AYARLARI --- */
-  /* Her satır bir öncekinden 0.5 saniye sonra başlar */
-  .row-1  { animation-delay: 1.0s; }
-  .row-2  { animation-delay: 1.5s; }
-  .row-3  { animation-delay: 2.0s; }
-  .row-4  { animation-delay: 2.5s; }
-  .row-5  { animation-delay: 3.0s; }
-  .row-6  { animation-delay: 3.5s; }
-  .row-7  { animation-delay: 4.0s; }
-  .row-8  { animation-delay: 4.5s; }
-  .row-9  { animation-delay: 5.0s; }
-  .row-10 { animation-delay: 5.5s; }
+  /* Gecikme Ayarları */
+  .row-1  { animation-delay: 0.2s; }
+  .row-2  { animation-delay: 0.4s; }
+  .row-3  { animation-delay: 0.6s; }
+  .row-4  { animation-delay: 0.8s; }
+  .row-5  { animation-delay: 1.0s; }
+  .row-6  { animation-delay: 1.2s; }
+  .row-7  { animation-delay: 1.4s; }
+  .row-8  { animation-delay: 1.6s; }
+  .row-9  { animation-delay: 1.8s; }
+  .row-10 { animation-delay: 2.0s; }
 
-  /* --- ANİMASYON MANTIĞI --- */
+  /* --- YENİ ANİMASYON MANTIĞI --- */
   @keyframes slideInOut {
-    0%   { right: -600px; } /* Ekranın sağında gizli */
-    10%  { right: 0px; }    /* Sağdan içeri giriş */
-    80%  { right: 0px; }    /* Ekranda bekleme süresi */
-    90%  { right: -600px; } /* Sağdan dışarı çıkış */
-    100% { right: -600px; } /* Döngü sonuna kadar gizli bekle */
+    0%   { right: -800px; } /* BAŞLANGIÇ */
+    53%  { right: -800px; } /* 8 saniye boyunca bekledi (15sn * %53 ≈ 8sn) */
+    60%  { right: 0px; }    /* 1 saniyede yavaşça giriş yaptı */
+    93%  { right: 0px; }    /* 5 saniye boyunca ekranda sabit durdu */
+    100% { right: -800px; } /* 1 saniyede geri kapandı */
   }
 </style>
 </head>
 <body>
 
-  <div class="gift-row row-1"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/679/679821.png"><div class="text">1. Ahmet: Gül 🌹</div></div>
-  <div class="gift-row row-2"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/679/679821.png"><div class="text">2. Mehmet: Asa 🪄</div></div>
-  <div class="gift-row row-3"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/679/679821.png"><div class="text">3. Ayşe: Kalp ❤️</div></div>
-  <div class="gift-row row-4"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/679/679821.png"><div class="text">4. Can: Para 💸</div></div>
-  <div class="gift-row row-5"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/679/679821.png"><div class="text">5. Selin: Yat 🛥️</div></div>
-  <div class="gift-row row-6"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/679/679821.png"><div class="text">6. Mert: Şato 🏰</div></div>
+  <div class="gift-row row-1"><img class="icon" src="https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/802a21ae29f9fae5abe3693de9f874bd~tplv-obj.webp"><div class="text">Fart Sesi💨​</div></div>
+  <div class="gift-row row-2"><img class="icon" src="https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/eba3a9bb85c33e017f3648eaf88d7189~tplv-obj.webp"><div class="text">Amongus Sesi👀​​</div></div>
+  <div class="gift-row row-3"><img class="icon" src="https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/a4c4dc437fd3a6632aba149769491f49.png~tplv-obj.webp"><div class="text">Tamam Reis👍​</div></div>
+  <div class="gift-row row-4"><img class="icon" src="https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/b0892f1eca2c7b34c1bc9c15fe6c4393~tplv-obj.webp"><div class="text">Selam Sana👋​​</div></div>
+  <div class="gift-row row-5"><img class="icon" src="https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/98bea1b189fba75bf0ca766b4dc1976e~tplv-obj.webp"><div class="text">Ağlama Hadi Oyna😁​​</div></div>
+  <div class="gift-row row-6"><img class="icon" src="https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/eb77ead5c3abb6da6034d3cf6cfeb438~tplv-obj.webp"><div class="text">Hanimiş Montişim😍​</div></div>
   <div class="gift-row row-7"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/679/679821.png"><div class="text">7. Elif: Evren 🌌</div></div>
   <div class="gift-row row-8"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/679/679821.png"><div class="text">8. Burak: Aslan 🦁</div></div>
   <div class="gift-row row-9"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/679/679821.png"><div class="text">9. Deniz: Gözlük 😎</div></div>
